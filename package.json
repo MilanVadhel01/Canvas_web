@@ -1,0 +1,12 @@
+{
+  "name": "canvas-web",
+  "version": "1.0.0",
+  "description": "AI Air Canvas - Draw in the air using hand gestures",
+  "scripts": {
+    "dev": "npx serve@latest .",
+    "start": "npx serve@latest . -l 3000"
+  },
+  "keywords": ["canvas", "hand-tracking", "mediapipe", "drawing"],
+  "author": "MilanVadhel01",
+  "license": "MIT"
+}

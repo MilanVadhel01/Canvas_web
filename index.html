@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Canvas</title>
+    <meta name="description"
+        content="Draw in the air using hand gestures! A virtual drawing application powered by AI hand tracking.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader">
+            <div class="loader-spinner"></div>
+            <h2>Air Canvas</h2>
+            <p id="loading-status">Initializing camera...</p>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div id="app" class="app-container hidden">
+        <!-- Header with Color Palette -->
+        <header class="palette-header">
+            <div class="color-box" data-color="#FF00FF" style="background: #FF00FF;">
+                <span>Purple</span>
+            </div>
+            <div class="color-box" data-color="#0066FF" style="background: #0066FF;">
+                <span>Blue</span>
+            </div>
+            <div class="color-box" data-color="#00FF00" style="background: #00FF00;">
+                <span>Green</span>
+            </div>
+            <div class="color-box" data-color="#FF3333" style="background: #FF3333;">
+                <span>Red</span>
+            </div>
+            <div class="color-box" data-color="#FFFF00" style="background: #FFFF00;">
+                <span>Yellow</span>
+            </div>
+            <div class="color-box eraser-box" data-color="eraser"
+                style="background: linear-gradient(135deg, #333 50%, #666 50%);">
+                <span>Eraser</span>
+            </div>
+        </header>
+
+        <!-- Canvas Area -->
+        <main class="canvas-area">
+            <video id="video" autoplay playsinline></video>
+            <canvas id="drawing-canvas"></canvas>
+            <canvas id="ui-canvas"></canvas>
+        </main>
+
+        <!-- Controls Panel -->
+        <aside class="controls-panel">
+            <div class="control-group">
+                <label>Mode</label>
+                <div id="mode-display" class="mode-badge">IDLE</div>
+            </div>
+            <div class="control-group">
+                <label>Brush Size</label>
+                <div class="brush-size-control">
+                    <button id="brush-decrease" class="btn-icon">−</button>
+                    <span id="brush-size-value">15</span>
+                    <button id="brush-increase" class="btn-icon">+</button>
+                </div>
+                <div id="brush-preview" class="brush-preview"></div>
+            </div>
+            <div class="control-group">
+                <label>Actions</label>
+                <button id="clear-btn" class="btn-action">Clear</button>
+                <button id="save-btn" class="btn-action">Save</button>
+            </div>
+        </aside>
+
+        <!-- Instructions -->
+        <div class="instructions-toggle">
+            <button id="help-btn" class="btn-help">?</button>
+        </div>
+        <div id="instructions" class="instructions hidden">
+            <h3>Gestures</h3>
+            <ul>
+                <li><strong>Index finger</strong> — Draw</li>
+                <li><strong>Two fingers</strong> — Select</li>
+                <li><strong>Open palm</strong> — Clear</li>
+                <li><strong>Fist</strong> — Eraser</li>
+            </ul>
+            <h3>Keyboard</h3>
+            <ul>
+                <li><strong>+/-</strong> — Brush size</li>
+                <li><strong>E</strong> — Eraser</li>
+                <li><strong>C</strong> — Clear</li>
+                <li><strong>S</strong> — Save</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- MediaPipe Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1675469240/hands.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.3.1675466862/camera_utils.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.3.1675466124/drawing_utils.min.js"
+        crossorigin="anonymous"></script>
+
+    <!-- App Scripts -->
+    <script src="js/handDetector.js"></script>
+    <script src="js/colorPalette.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
