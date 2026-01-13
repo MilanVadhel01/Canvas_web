@@ -3,7 +3,7 @@
 Draw in the air using hand gestures! A browser-based virtual drawing application powered by MediaPipe hand tracking.
 
 ![AI Air Canvas](https://img.shields.io/badge/AI-Air%20Canvas-purple?style=for-the-badge)
-![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?style=for-the-badge&logo=vercel)
+![Demo web](https://air-canvas-kappa.vercel.app/)
 
 ## ✨ Features
 
