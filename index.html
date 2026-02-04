@@ -18,8 +18,78 @@
 </head>
 
 <body>
+    <!-- Welcome Page -->
+    <div id="welcome-page" class="welcome-page">
+        <div class="welcome-container">
+            <div class="welcome-header">
+                <h1 class="welcome-title"><span class="title-emoji">
+                        <br><br>✨</span> Air Canvas</h1>
+                <p class="welcome-subtitle">Draw in the air using hand gestures powered by AI</p>
+            </div>
+
+            <div class="manual-section">
+                <h2>🖐️ Gesture Controls</h2>
+                <div class="gesture-grid">
+                    <div class="gesture-card">
+                        <div class="gesture-icon">☝️</div>
+                        <h3>Index Finger</h3>
+                        <p>Draw on canvas</p>
+                    </div>
+                    <div class="gesture-card">
+                        <div class="gesture-icon">✌️</div>
+                        <h3>Two Fingers</h3>
+                        <p>Selection mode - choose colors</p>
+                    </div>
+                    <div class="gesture-card">
+                        <div class="gesture-icon">🖐️</div>
+                        <h3>Open Palm</h3>
+                        <p>Clear the canvas</p>
+                    </div>
+                    <div class="gesture-card">
+                        <div class="gesture-icon">✊</div>
+                        <h3>Fist</h3>
+                        <p>Eraser mode</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="manual-section">
+                <h2>⌨️ Keyboard Shortcuts</h2>
+                <div class="keyboard-grid">
+                    <div class="key-item">
+                        <kbd>+</kbd> / <kbd>-</kbd>
+                        <span>Adjust brush size</span>
+                    </div>
+                    <div class="key-item">
+                        <kbd>E</kbd>
+                        <span>Toggle eraser</span>
+                    </div>
+                    <div class="key-item">
+                        <kbd>C</kbd>
+                        <span>Clear canvas</span>
+                    </div>
+                    <div class="key-item">
+                        <kbd>S</kbd>
+                        <span>Save drawing</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="welcome-note">
+                <p>📷 Camera access is required for hand tracking</p>
+            </div>
+
+            <button id="start-btn" class="start-button">
+                <span>Start Drawing</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
     <!-- Loading Screen -->
-    <div id="loading-screen" class="loading-screen">
+    <div id="loading-screen" class="loading-screen hidden">
         <div class="loader">
             <div class="loader-spinner"></div>
             <h2>Air Canvas</h2>

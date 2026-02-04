@@ -510,6 +510,19 @@ class AirCanvasApp {
 
 // Initialize app when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    const app = new AirCanvasApp();
-    app.init();
+    const startBtn = document.getElementById('start-btn');
+    const welcomePage = document.getElementById('welcome-page');
+    const loadingScreen = document.getElementById('loading-screen');
+
+    startBtn.addEventListener('click', () => {
+        // Hide welcome page
+        welcomePage.classList.add('hidden');
+
+        // Show loading screen
+        loadingScreen.classList.remove('hidden');
+
+        // Initialize the app
+        const app = new AirCanvasApp();
+        app.init();
+    });
 });
